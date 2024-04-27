@@ -7,3 +7,13 @@ export function GET(requestEvent){
     const findComment=comments.find((comment)=>comment.id===parseInt(commentId))
     return json(findComment)
 }
+
+export async function PATCH(requestEvent){
+    const {params,request}=requestEvent
+    const {commentId}=params
+    const{text}=await request.json()
+
+    const patchComment=comments.find((comment)=>comment.id===parseInt(commentId))
+    patchComment.text=text
+    return json(patchComment)
+}
