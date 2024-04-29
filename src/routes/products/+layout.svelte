@@ -1,11 +1,12 @@
 <script>
     export let data
+    const username=data.username
   const title=data.title
   const  featuredProducts=data.featuredProducts 
 
 </script>
 <slot/>
-<h2>{title}</h2>
+<h2>{title} for {username}</h2>
 
 {#each featuredProducts as product (product)}
 <div class="product-item">

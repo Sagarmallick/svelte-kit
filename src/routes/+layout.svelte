@@ -1,9 +1,8 @@
 <script>
-    import Header from "$lib/header.svelte";
-    import Footer from "$lib/footer.svelte";
+    export let data
+    const {username}=data
 </script>
-<Header />
-<slot/>
-<Footer />
+<div>welcome, {username}</div>
+<slot />
 
 
